@@ -1,0 +1,58 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.correct{
+	border:1px solid green;
+}
+.incorrect{
+	border:1px solid red;
+}
+body>button{
+	visibility:visible;
+}
+#edit{
+	visibility: hidden;
+}
+#addition{
+	visibility:hidden;
+}
+#delete{
+	visibility:hidden;
+}
+#list{
+	visibility:hidden;
+}
+.view{
+	position:absolute;
+}
+span.r{
+	position:relative;
+	width:200px;
+}
+#displaymodal{
+	position:fixed;
+	top:0%;
+	left:0%;
+	right:0%;
+	bottom:0%;
+	height:100%;
+	width:100%;
+	z-index: 999999;
+	background:rgba(0,0,0,0.4);
+	visibility:hidden;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+#modalcontent{
+	position:fixed;
+	top:25%;
+	left:25%;
+	height:50%;
+	width:50%;
+	background:#ffffff;
+	border-radius: 10px;
+}

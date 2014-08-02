@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            pizzeria
+        </title>
+        <link rel='stylesheet' href='/stylesheets/style.css'>
+    </head>
+    <body>
+        <h1>ONLINE PIZZA DELIVER</h1>
+        
+        <form id='details'>
+            <span>name :</span>
+            <input id='username' type='tex' name='username'>
+            <span>Phone number :</span>
+            <input id='phno' type='text' name='phonenumber'>
+            <textarea id='address' rows='4' cols='50' form='details' placeholder='enter your address here...'></textarea>
+            <span>Order date :</span>
+            <input type="date" name="orderdate" placeholder='dd/mm/yyyy'>
+            <span>Order time :</span>
+            <input type='time' name='ordertime' placeholder='hh:mm'>
+            <span>no of orders:</span>
+            <input type='number' id='nooforders'>
+            <hr>
+            <p>Select pizza:</p>
+            <select id='pizza'>
+                <option value="Veg Treat">Veg Treat</option>
+                <option value="Italian Treat">Italian Treat</option>
+                <option value="Super Treat">Super Treat</option>
+                <option value="Classic Cheese">Classic Cheese</option>
+            </select>
+            <p>Size:</p>
+            <input type='radio' name='size' value='small'><span>small</span>
+            <input type='radio' name='size' value='medium'><span>medium</span>
+            <input type='radio' name='size' value='large'><span>large</span>
+            <p>Toppings:</p>
+            <input type='checkbox' name='toppings' value='ExtraCheese'><span>Extra Cheese</span>
+            <input type='checkbox' name='toppings' value='Mushrooms'><span>Mushrooms</span>
+            <input type='checkbox' name='toppings' value='BlackOlives'><span>Black Olives</span>
+            <input type='checkbox' name='toppings' value='Onions'><span>Onions</span>
+            <input type='checkbox' name='toppings' value='GreenPeppers'><span>Green Peppers</span>
+            <input type='checkbox' name='toppings' value='Tomatoes'><span>Tomatoes</span>
+            <input type='checkbox' name='toppings' value='Pepperoni'><span>Pepperoni</span>
+            <input type='checkbox' name='toppings' value='Salami'><span>Salami</span>
+            <input type='checkbox' name='toppings' value='Sausage'><span>Sausage</span>
+            <input type='checkbox' name='toppings' value='Shrimp'><span>Shrimp</span>
+            <input type='checkbox' name='toppings' value='Anchovies'><span>Anchovies</span>
+            <p>Special Information:</p>
+            <textarea id='specialinfo' form='details' rows='4' cols='100' placeholder='Enter Your Special Information Here...'></textarea>
+            <button href='#displaymodal' id='ordercomplete' type='button'>Order Complete</button>
+        </form>
+        <div id='displaymodal'>
+            <div id='modalcontent'>
+                <span id='total'>Total price :</span><br>
+                <button id='deliver' type='button'>Deliver</button>
+                <button id='anotherorder' type='button'>Place another order</button>
+            </div>
+        </div>
+    </body>
+    <script src='/javascripts/script.js'></script>
+</html>
