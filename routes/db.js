@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
 var db = 'piz'
 ,   schema = mongoose.Schema
-,   pizschema;
+,   pizschema
+,   userschema;
 
-mongoose.connect('mongodb://localhost/'+db);
+mongoose.connect('mongodb://sujit:tijus@ds053188.mongolab.com:53188/demo');
 
 mongoose.connection.on('connected',function(){
     console.log('connected to mongodb on database '+db);

@@ -42,11 +42,12 @@ router.post('/:data',function(req,res){
           }
           else{
             console.log('edited');
+            res.send(data);
           }
           });
       }
       });
-    res.send(data);
+    
   }
   else if (req.query.details) {
     console.log(req.query.details);
@@ -56,9 +57,10 @@ router.post('/:data',function(req,res){
       }
       else{
         doc.remove();
+        res.send(data);
       }
       });
-    res.send(data);
+    
   }
   else{
     console.log('add');
