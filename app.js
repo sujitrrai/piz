@@ -16,7 +16,7 @@ var register = require('./routes/register');
 
 var app = express();
 
-var ip = '172.168.15.236';
+var ip = "111.119.218.116";
 var port = 4000;
 
 // view engine setup

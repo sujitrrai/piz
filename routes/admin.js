@@ -26,6 +26,7 @@ router.get('/', function(req, res) {
 });
 router.post('/:data',function(req,res){
   var data = JSON.parse(req.params.data);
+  console.log(data);
   if (req.query.editflag==='true') {
     console.log('edit');
     console.log(JSON.stringify({'pizza':data.pizza}));
@@ -34,6 +35,7 @@ router.post('/:data',function(req,res){
         console.log(err);
       }
       else {
+        console.log('for editing');
         doc.pizza = data.changed.pizza;
         doc.price = data.changed.price;
         doc.save(function(err){

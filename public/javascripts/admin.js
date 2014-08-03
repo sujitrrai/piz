@@ -1,3 +1,5 @@
+
+
 window.onload = init;
 var list = document.getElementById('showpizza');
 var add = document.getElementById('addpizza');
@@ -51,7 +53,7 @@ function insertList(data) {
     
     var row =document.createElement('p');
     row.className = 'row';
-    row.innerHTML = '<span class="r">'+'pizza :'+data.pizza+'</span>'+'<span class="r">'+'price :'+data.price+'</span>';  
+    row.innerHTML = '<span class="r">'+'pizza :'+data.pizza+'</span><br>'+'<span class="size">'+'small :'+data.price.size.small+'</span>'+'<span class="size">'+'medium :'+data.price.size.medium+'</span>'+'<span class="size">'+'large :'+data.price.size.large+'</span>';  
     listview.appendChild(row);
 }
 function showOptions(e){
@@ -67,7 +69,9 @@ function activateAddView() {
     edit.style.visibility = 'hidden';
     del.style.visibility = 'hidden';
     document.getElementById('newpizza').value='';
-    document.getElementById('price').value='';
+    document.getElementById('small').value='';
+    document.getElementById('medium').value='';
+    document.getElementById('large').value='';
 }
 function removerow(){
     olddetails = extractData(target);
@@ -98,14 +102,21 @@ function editview(){
     del.style.visibility = 'hidden';
     olddetails = extractData(target);
     document.getElementById('newpizza').value = olddetails.pizza;
-    document.getElementById('price').value = olddetails.price;
+    document.getElementById('small').value = olddetails.price.size.small;
+    document.getElementById('medium').value = olddetails.price.size.medium;
+    document.getElementById('large').value = olddetails.price.size.large;
     editflag = true;
 }
 function extractData(parentnode){
    var child = parentnode.getElementsByClassName('r');
+   var price = parentnode.getElementsByClassName('size');
    var details = {};
+   details.price = {};
+   details.price.size = {};
    details.pizza = extractText(child[0],'pizza :');
-   details.price = extractText(child[1],'price :');
+   details.price.size.small = 1*extractText(price[0],'small :');
+   details.price.size.medium = 1*extractText(price[1],'medium :');
+   details.price.size.large = 1*extractText(price[2],'large :');
    return details;
 }
 function extractText(nod,str){
@@ -117,21 +128,29 @@ function extractText(nod,str){
     return txt;
 }
 function addPizza(){
-    var data = {};
+    var data = {},size = {};
+    data.price  = {};
+    data.price.size = {};
     var pizza = document.getElementById('newpizza').value;
-    var price = document.getElementById('price').value;
+    size.small = document.getElementById('small').value;
+    size.medium = document.getElementById('medium').value;
+    size.large = document.getElementById('large').value;
+    console.log('price :');
+    console.log(size);
     if (editflag) {
         data.changed = {};
+        data.changed.price = {};
+        data.changed.price.size = {};
         data.old = {};
         data.old = olddetails;
         data.changed.pizza=pizza;
-        data.changed.price=price;
+        data.changed.price.size=size;
     }
     else {
     //data should be handled with care as it is going to be stored
     //directly in database
         data.pizza = pizza;
-        data.price = price;
+        data.price.size = size;
     }
         if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
                  xmlhttp=new XMLHttpRequest();
