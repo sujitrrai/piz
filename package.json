@@ -13,5 +13,18 @@
     "body-parser": "~1.0.0",
     "debug": "~0.7.4",
     "jade": "~1.3.0"
-  }
+  },
+  "description": "this is sooad project",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sujitrrai/piz/tree/pizheroku"
+  },
+  "keywords": [
+    "piz",
+    "heroku"
+  ],
+  "author": "dharmesh-rahul-sujit",
+  "license": "ISC"
 }
